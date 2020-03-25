@@ -1,5 +1,5 @@
 language: node_js              # 指定环境及其node_js版本
-node_js: 
+node_js:                       # 部署前还需要设置 hexo _config.yml 的 URL 和 Deployment 部分
   - lts/*
 
 cache:                         # 缓存，提高下次构建的效率
@@ -27,6 +27,8 @@ after_script:
   - git add .
   - git commit -m "Travis CI Auto Builder"
   - git push --force --quiet "https://${Trcl_Deployment_Token}@${GH_REF}" master:gh-pages
+                               # Trcl_Deployment_Token 是 Travis CI 上设置的 Token 名称
+                               # master:gh-pages master 是源代码分支 gh-pages 是静态网站部署的分支
 
 branches:
   only:
