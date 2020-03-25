@@ -26,7 +26,7 @@ after_script:
   - git config user.email "qinlzhu@outlook.com"
   - git add .
   - git commit -m "Travis CI Auto Builder"
-  - git push --force --quiet "https://${Trcl_Deployment_Token}@${GH_REF}" gh-pages:gh-pages
+  - git push --force --quiet "https://${Trcl_Deployment_Token}@${GH_REF}" master:gh-pages
 
 branches:
   only:
